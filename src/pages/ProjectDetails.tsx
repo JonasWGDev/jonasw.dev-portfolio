@@ -1,121 +1,26 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import starbucksImage from "@/assets/starbucks-landing.png";
 
 const projects = [
   {
     id: 1,
-    title: "E-commerce Premium",
-    description: "Sistema completo de vendas online com gestão de produtos, carrinho e pagamentos integrados.",
-    fullDescription: "Um e-commerce robusto desenvolvido para atender às necessidades de negócios modernos. O sistema conta com gestão completa de produtos, categorias, estoque, carrinho de compras inteligente e integração com múltiplos meios de pagamento. A interface foi pensada para proporcionar a melhor experiência de compra para os usuários.",
-    category: "sistemas",
-    tags: ["React", "Node.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    features: [
-      "Gestão completa de produtos e categorias",
-      "Carrinho de compras com persistência",
-      "Integração com Stripe para pagamentos",
-      "Painel administrativo completo",
-      "Sistema de avaliações e reviews",
-      "Notificações por email"
-    ],
-    date: "2024",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 2,
-    title: "Clínica Odontológica",
-    description: "Site institucional moderno com agendamento online e área do paciente.",
-    fullDescription: "Site institucional desenvolvido para uma clínica odontológica de alto padrão. O projeto inclui sistema de agendamento online integrado, área exclusiva do paciente para acompanhamento de tratamentos e histórico de consultas, além de uma apresentação elegante dos serviços oferecidos.",
-    category: "sites",
-    tags: ["Next.js", "Tailwind", "Prisma", "PostgreSQL"],
-    features: [
-      "Sistema de agendamento online",
-      "Área do paciente com login",
-      "Histórico de consultas e tratamentos",
-      "Apresentação de serviços e equipe",
-      "Blog com conteúdo sobre saúde bucal",
-      "Integração com WhatsApp"
-    ],
-    date: "2024",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Lançamento Imobiliário",
-    description: "Landing page de alta conversão para captação de leads em empreendimento de luxo.",
-    fullDescription: "Landing page estratégica desenvolvida para o lançamento de um empreendimento imobiliário de alto padrão. O projeto foi focado em alta conversão, com design sofisticado, animações suaves e formulários otimizados para captação de leads qualificados.",
+    title: "Landing Page Starbucks",
+    description: "Landing page criada para treino de habilidades de front-end.",
+    fullDescription: "Landing page desenvolvida como projeto de estudo e treino de habilidades de front-end. O foco principal foi na criação de animações suaves utilizando CSS Keyframes, design moderno e responsivo, além de manter um código limpo e bem organizado. O projeto simula uma página promocional da Starbucks com elementos visuais atrativos e interativos.",
     category: "landing",
-    tags: ["React", "GSAP", "Animations", "Responsive"],
+    tags: ["Html", "Css", "Javascript", "Animations - Keyframe", "Codigo limpo"],
     features: [
-      "Design premium e sofisticado",
-      "Animações e transições suaves",
-      "Formulário de captação otimizado",
-      "Galeria de imagens do empreendimento",
-      "Integração com CRM",
-      "Analytics avançado"
+      "Animações suaves com CSS Keyframes",
+      "Design moderno e responsivo",
+      "Código limpo e organizado",
+      "Layout atrativo e profissional",
+      "Elementos interativos",
+      "Navegação intuitiva"
     ],
     date: "2024",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 4,
-    title: "Dashboard Analytics",
-    description: "Sistema de gestão com dashboards interativos e relatórios em tempo real.",
-    fullDescription: "Plataforma completa de analytics com dashboards interativos e relatórios em tempo real. O sistema permite visualização de métricas importantes, geração de relatórios personalizados e acompanhamento de KPIs essenciais para a tomada de decisão.",
-    category: "sistemas",
-    tags: ["React", "TypeScript", "Charts", "REST API", "Tailwind"],
-    features: [
-      "Dashboards interativos e personalizáveis",
-      "Relatórios em tempo real",
-      "Exportação de dados (PDF, Excel)",
-      "Gráficos e visualizações avançadas",
-      "Sistema de alertas e notificações",
-      "Controle de acesso por perfil"
-    ],
-    date: "2023",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 5,
-    title: "Escritório de Advocacia",
-    description: "Presença digital profissional com blog jurídico e formulário de contato.",
-    fullDescription: "Site institucional elegante desenvolvido para um escritório de advocacia. O projeto transmite credibilidade e profissionalismo, com seções detalhadas sobre áreas de atuação, equipe de advogados, blog com artigos jurídicos e formulário de contato integrado.",
-    category: "sites",
-    tags: ["WordPress", "Custom Theme", "SEO", "Blog"],
-    features: [
-      "Design elegante e profissional",
-      "Blog jurídico com categorias",
-      "Apresentação da equipe",
-      "Áreas de atuação detalhadas",
-      "Formulário de contato avançado",
-      "Otimização para SEO"
-    ],
-    date: "2023",
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 6,
-    title: "Curso Online",
-    description: "Landing page para lançamento de infoproduto com countdown e gatilhos mentais.",
-    fullDescription: "Landing page de alta conversão desenvolvida para o lançamento de um curso online. O projeto utiliza técnicas avançadas de copywriting, gatilhos mentais estratégicos, countdown para criar urgência e design focado em conversão.",
-    category: "landing",
-    tags: ["React", "GSAP", "Copywriting", "A/B Testing"],
-    features: [
-      "Countdown para criar urgência",
-      "Gatilhos mentais estratégicos",
-      "Depoimentos e prova social",
-      "FAQ interativo",
-      "Integração com plataforma de pagamento",
-      "Pixel de rastreamento"
-    ],
-    date: "2023",
-    liveUrl: "#",
-    githubUrl: "#",
+    image: starbucksImage,
   },
 ];
 
@@ -189,34 +94,20 @@ export default function ProjectDetails() {
 
           {/* Project Image */}
           <div 
-            className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl mb-8 flex items-center justify-center glass-card animate-fade-in"
+            className="aspect-video rounded-2xl mb-8 overflow-hidden glass-card animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
-            <div className="text-center">
-              <Tag className="w-16 h-16 text-primary/50 mx-auto mb-2" />
-              <p className="text-muted-foreground">Preview do Projeto</p>
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div 
-            className="flex flex-wrap gap-4 mb-12 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <Button variant="hero" className="gap-2">
-              <ExternalLink className="w-4 h-4" />
-              Ver Projeto Online
-            </Button>
-            <Button variant="glass" className="gap-2">
-              <Github className="w-4 h-4" />
-              Ver Código
-            </Button>
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Features */}
           <div 
             className="glass-card rounded-2xl p-6 sm:p-8 mb-8 animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.2s" }}
           >
             <h2 className="font-display text-xl font-semibold mb-6">
               Funcionalidades
@@ -234,7 +125,7 @@ export default function ProjectDetails() {
           {/* Technologies */}
           <div 
             className="glass-card rounded-2xl p-6 sm:p-8 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
+            style={{ animationDelay: "0.3s" }}
           >
             <h2 className="font-display text-xl font-semibold mb-6">
               Tecnologias Utilizadas
@@ -254,7 +145,7 @@ export default function ProjectDetails() {
           {/* CTA */}
           <div 
             className="text-center mt-12 animate-fade-in"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.4s" }}
           >
             <p className="text-muted-foreground mb-4">
               Gostou deste projeto? Vamos conversar sobre o seu!
