@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ExternalLink, Folder } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -58,6 +59,7 @@ const projects = [
 
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<Category>("todos");
+  const navigate = useNavigate();
 
   const filteredProjects =
     activeCategory === "todos"
@@ -129,7 +131,12 @@ export function ProjectsSection() {
                   </div>
 
                   {/* View Button */}
-                  <Button variant="ghost" size="sm" className="w-full justify-center gap-2 text-primary">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full justify-center gap-2 text-primary"
+                    onClick={() => navigate(`/projeto/${project.id}`)}
+                  >
                     Ver Detalhes
                     <ExternalLink className="w-4 h-4" />
                   </Button>
