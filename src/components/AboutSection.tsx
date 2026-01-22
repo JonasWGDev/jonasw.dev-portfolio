@@ -1,7 +1,7 @@
 import { Code, Palette, Rocket, Zap } from "lucide-react";
 
 const skills = [
-  { icon: Code, title: "Desenvolvimento Web", description: "React, Next.js, TypeScript, Node.js" },
+  { icon: Code, title: "Desenvolvimento Web", description: "ReactJs, Html, Css, Javascript, Nodejs, Sass, Express" },
   { icon: Palette, title: "UI/UX Design", description: "Interfaces modernas e intuitivas" },
   { icon: Rocket, title: "Performance", description: "Sites rápidos e otimizados para SEO" },
   { icon: Zap, title: "Soluções Ágeis", description: "Entregas rápidas com qualidade" },
